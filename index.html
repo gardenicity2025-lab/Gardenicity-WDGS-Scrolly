@@ -416,37 +416,40 @@ background:#eaeeec;
 
 /* ==== HERO (No changes) ==== */
 .hero-media {
-  top: 20px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  top:20px;
+  bottom:20px;
+  left:20px;
+  right:20px;
 }
 .hero-title {
-  font-size: 72px;
-  line-height: 1.05;
+  font-size:72px;
+  line-height:1.05;
 }
 .hero-links {
-  font-size: 20px;
-  line-height: 26px;
+  font-size:20px;
+  line-height:26px;
 }
-/* 1. Base link styling for ALL links in hero */
+/* base hero link styling */
 .hero-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color .2s ease;
+  color:#fff;
+  text-decoration:none;
+  transition:color .2s ease;
 }
-/* 2. ONLY give the green hover to links that are NOT disabled */
+/* active links only */
 .hero-links a:not(.disabled-link):hover,
 .hero-links a:not(.disabled-link):focus-visible {
-  color: #00A86B;
+  color:#00A86B;
 }
-/* 3. DEAD LINKS: Force white and disable interactions */
-/* Using the parent class makes this more specific than the hover rule above */
-.hero-links a.disabled-link {
+/* ==== DEAD LINKS (GLOBAL, HARD STOP) ==== */
+a.disabled-link {
+  pointer-events: none;
   color: #fff !important;
-  cursor: default;
-  pointer-events: none; /* This prevents the hover state from even triggering */
-  text-decoration: none;
+}
+a.disabled-link:hover,
+a.disabled-link:focus,
+a.disabled-link:focus-visible,
+a.disabled-link:active {
+  color: #fff !important;
 }
   
 /* ==== SECTION WRAPS (No changes) ==== */
