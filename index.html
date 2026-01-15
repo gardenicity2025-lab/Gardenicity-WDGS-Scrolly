@@ -416,40 +416,32 @@ background:#eaeeec;
 
 /* ==== HERO Link Styles ==== */
 .hero-media {
-  top:20px;
-  bottom:20px;
-  left:20px;
-  right:20px;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
 }
 .hero-title {
-  font-size:72px;
-  line-height:1.05;
+  font-size: 72px;
+  line-height: 1.05;
 }
 .hero-links {
-  font-size:20px;
-  line-height:26px;
+  font-size: 20px;
+  line-height: 26px;
 }
-/* base hero link styling */
 .hero-links a {
-  color:#fff;
-  text-decoration:none;
-  transition:color .2s ease;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-/* active links only */
-.hero-links a:not(.disabled-link):hover,
-.hero-links a:not(.disabled-link):focus-visible {
-  color:#00A86B;
+.hero-links a:hover,
+.hero-links a:focus-visible {
+  color: #00A86B;
 }
-/* ==== DEAD LINKS (GLOBAL, HARD STOP) ==== */
-a.disabled-link {
-  pointer-events: none;
-  color: #fff !important;
-}
-a.disabled-link:hover,
-a.disabled-link:focus,
-a.disabled-link:focus-visible,
-a.disabled-link:active {
-  color: #fff !important;
+.hero-links .dead-link {
+  color: #fff;
+  cursor: default; /* optional: show it’s not clickable */
+  text-decoration: none;
 }
   
 /* ==== SECTION WRAPS (No changes) ==== */
@@ -659,8 +651,8 @@ padding: 0 20px !important;
 <nav class="hero-links" id="hero-links" aria-label="Primary">
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-CivicGreen-Scrolly">Civic Green</a>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-Growth-Scrolly/">Growth</a>
-<a href="#" class="disabled-link" aria-disabled="true">Sustenance</a><!-- dead link placeholder -->
-<a href="#" class="disabled-link" aria-disabled="true">Leafy SDGs</a><!-- dead link placeholder -->
+<span class="dead-link">Sustenance</span>
+<span class="dead-link">Leafy SDGs</span>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly-HE">HE/עב</a>
 </nav>
 </div>
