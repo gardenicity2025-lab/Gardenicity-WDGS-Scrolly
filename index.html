@@ -415,22 +415,23 @@ background:#eaeeec;
 }
 /* ==== HERO (No changes) ==== */
 .hero-media {
-top:20px; bottom:20px; left:20px; right:20px;
+  top:20px; bottom:20px; left:20px; right:20px;
 }
 .hero-title {
-font-size:72px;
-line-height:1.05;
+  font-size:72px;
+  line-height:1.05;
 }
 .hero-links {
-font-size:20px;
-line-height:26px;
+  font-size:20px;
+  line-height:26px;
 }
+/* ==== DEAD LINKS (GLOBAL) ==== */
 .disabled-link {
   pointer-events: none; /* disables clicks */
-}   
-.hero-links a.disabled-link:hover,
-.hero-links a.disabled-link:focus-visible {
-  color: #fff;
+}
+.disabled-link:hover,
+.disabled-link:focus-visible {
+  color: #fff; /* cancel green hover */
 }
   
 /* ==== SECTION WRAPS (No changes) ==== */
@@ -642,7 +643,7 @@ padding: 0 20px !important;
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-Growth-Scrolly/">Growth</a>
 <a href="#" class="disabled-link" aria-disabled="true">Sustenance</a><!-- dead link placeholder -->
 <a href="#" class="disabled-link" aria-disabled="true">Leafy SDGs</a><!-- dead link placeholder -->
-<a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly-HE">EN/עב</a>
+<a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly-HE">HE/עב</a>
 </nav>
 </div>
 </div>
@@ -814,8 +815,8 @@ Megama/Rebecca Sternberg, Keren Avni</p>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly/" target="_blank">Gardencity: What Did Geddes See?</a><br>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-CivicGreen-Scrolly/" target="_blank">Civic Green</a><br>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-Growth-Scrolly/" target="_blank">Growth</a><br>
-<a href="#" target="_blank">Sustenance</a><br> <!-- dead link placeholder -->
-<a href="#" target="_blank">Leafy SDGs</a><br> <!-- dead link placeholder -->
+<a href="#" class="disabled-link" aria-disabled="true">Sustenance</a><br>
+<a href="#" class="disabled-link" aria-disabled="true">Leafy SDGs</a><br>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly-HE/" target="_blank">EN/עב</a><br> 
 </p>
 </div>
