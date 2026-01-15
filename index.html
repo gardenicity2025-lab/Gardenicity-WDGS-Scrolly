@@ -413,6 +413,7 @@ margin:0;
 padding:0;
 background:#eaeeec;
 }
+  
 /* ==== HERO (No changes) ==== */
 .hero-media {
   top:20px; bottom:20px; left:20px; right:20px;
@@ -425,13 +426,18 @@ background:#eaeeec;
   font-size:20px;
   line-height:26px;
 }
+  
 /* ==== DEAD LINKS (GLOBAL) ==== */
 .disabled-link {
   pointer-events: none; /* disables clicks */
 }
-.disabled-link:hover,
-.disabled-link:focus-visible {
-  color: #fff; /* cancel green hover */
+
+/* cancel hover on dead links — MATCHES specificity */
+.hero-links a.disabled-link:hover,
+.hero-links a.disabled-link:focus-visible,
+a.disabled-link:hover,
+a.disabled-link:focus-visible {
+  color: #fff;
 }
   
 /* ==== SECTION WRAPS (No changes) ==== */
