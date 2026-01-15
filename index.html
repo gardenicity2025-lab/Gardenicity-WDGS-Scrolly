@@ -425,6 +425,9 @@ line-height:1.05;
 font-size:20px;
 line-height:26px;
 }
+.disabled-link {
+  pointer-events: none; /* disables clicks */
+}   
 /* ==== SECTION WRAPS (No changes) ==== */
 .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
 .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
@@ -632,8 +635,8 @@ padding: 0 20px !important;
 <nav class="hero-links" id="hero-links" aria-label="Primary">
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-CivicGreen-Scrolly">Civic Green</a>
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-Growth-Scrolly/">Growth</a>
-<a href="#" target="_blank">Sustenance</a><!-- dead link placeholder -->
-<a href="#" target="_blank">Leafy SDGs</a><!-- dead link placeholder -->
+<a href="#" class="disabled-link" aria-disabled="true">Sustenance</a><!-- dead link placeholder -->
+<a href="#" class="disabled-link" aria-disabled="true">Leafy SDGs</a><!-- dead link placeholder -->
 <a href="https://gardenicity2025-lab.github.io/Gardenicity-WDGS-Scrolly-HE">EN/עב</a>
 </nav>
 </div>
