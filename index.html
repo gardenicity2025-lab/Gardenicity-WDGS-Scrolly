@@ -423,11 +423,11 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 
   /* FIX 1: Title Cutting Off */
   .hero-title {
-    font-size: 11vw !important; 
+    font-size: 11vw !important; /* Scalable size to prevent cutoff */
     line-height: 1.05;
-    word-wrap: break-word;
+    word-wrap: break-word; /* Safety for long words */
     overflow-wrap: break-word;
-    max-width: 90vw;
+    max-width: 90vw; /* Keeps text away from the absolute edge */
   }
 
   .hero-links {
@@ -476,32 +476,28 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     display:block;
   }
 
-  /* ==== TEXT OVERLAY (Base Structure) ==== */
+  /* ==== TEXT OVERLAY (Base Structure & BACKGROUND) ==== */
   .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
     position:relative !important;
     opacity:1 !important;
     pointer-events:auto !important;
     transform:none !important;
-    padding: 0 20px !important; 
+    padding: 0 20px !important; /* Standardized side padding */
     max-width:100% !important;
     margin:0 auto;
     background:#eaeeec !important;
     z-index:2;
   }
 
-  /* S15 Overlay Overrides - FORCED FULL VIEWPORT WIDTH */
+  /* S15 Overlay Overrides */
   .s15-overlay {
     background: transparent !important;
-    padding: 60px 0 !important;
-    margin: 0 !important;
+    max-width: 100% !important;
+    padding: 60px 20px !important; /* Balanced top/bottom */
+    margin: 0 auto !important;
     position: relative !important;
     z-index: 5 !important;
-    
-    /* Center the container relative to the screen, not the parent rail */
-    width: 100vw !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
   }
 
   /* S15 Rail Structural Reset */
@@ -516,47 +512,47 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   }
 
   /* ==== TEXT (Margins & Color) ==== */
+  /* FIX 2: Symmetrical Padding/Margins */
   .s1-text, .s2-text, .s4-text, .s5-text,
-  .s9-text, .s11-text, .s13-text, .s14-text {
+  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
     transform:none !important;
     color:#111;
     text-align:left;
     font-size:18px;
     line-height:26px;
+    /* Reduced margin and made it equal top/bottom */
     margin: 60px 0 !important; 
     padding: 0 !important;
   }
 
-  /* S15 Text Specific Centering */
-  .s15-text {
-    color: #fff !important;
-    text-align: center !important;
-    padding: 0 20px !important;
-    margin: 60px auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Prevents extra bottom space */
+  /* Prevents the last element inside the text block from adding extra bottom space */
   .s1-text *:last-child, .s2-text *:last-child, .s4-text *:last-child, 
   .s5-text *:last-child, .s9-text *:last-child, .s11-text *:last-child, 
   .s13-text *:last-child, .s14-text *:last-child, .s15-text *:last-child {
     margin-bottom: 0 !important;
   }
 
+  /* S15 Text and Link Styling */
+  .s15-text {
+    color:#fff !important;
+    text-align:center !important;
+    margin: 60px auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
   .s15-text a {
-    color: #fff !important;
+    color:#fff !important;
     text-decoration: none !important;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
     display: inline-block !important;
     position: relative !important;
     z-index: 100 !important;
   }
-
-  .s15-text a:hover, 
-  .s15-text a:focus {
+  .s15-text a:hover {
     color: #00A86B !important;
     opacity: 1 !important;
   }
@@ -567,6 +563,77 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   }
   .frame.s3-frame, .frame.s8-frame, .frame.s12-frame, .frame.s15-frame {
     left:0; right:0; top:0; bottom:0;
+  }
+}
+
+/*
+=====================================================
+TABLET RESPONSIVE (min-width:601px and max-width:1023px)
+(Kept as requested)
+=====================================================
+*/
+@media (min-width:601px) and (max-width:1023px) {
+  .hero-title {
+    font-size: clamp(80px, 12vw, 100px) !important;
+    line-height: 1.05 !important;
+  }
+  .hero-links {
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+  .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
+  .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
+    min-height: 200vh !important;
+    background: #eaeeec !important;
+  }
+  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
+  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
+    max-width: 600px !important;
+    padding:0 !important;
+    margin:0 auto !important;
+    background:#eaeeec !important;
+    position: relative !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+  .s15-overlay {
+    background: transparent !important;
+    padding: 80px 0 80px 0 !important;
+    z-index: 5 !important;
+  }
+  .s1-frame, .s2-frame, .s4-frame, .s5-frame,
+  .s9-frame, .s11-frame, .s13-frame, .s14-frame {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 600px !important;
+    margin: 0 auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    padding: 20px !important;
+  }
+  .s1-text, .s2-text, .s4-text, .s5-text,
+  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
+    padding: 0 20px !important;
+    margin: 80px auto 80px auto !important;
+    left: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    width: auto !important;
+    text-align: left !important;
+  }
+  .s15-text {
+    text-align: center !important;
+    color: #fff !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .galA-left-frame, .galB-center-frame, .galC-left-frame {
+    width: 600px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 0 20px !important;
   }
 }
 
@@ -700,7 +767,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 <div class="s9-rail">
 <div class="s9-text" id="s9-text">
 <p style="color:#777;">King George Street, Women Paving the Road Alongside a Row of Sycamores, Tel Aviv, 1923. </p>
-<p><strong>HACHSHARAT HAYISHUV</strong>, founded in 1909 as the Zionist movement’s development company, played a central role in shaping the land on which Tel Aviv emerged.</p>
+<p><strong>HACHSHARAT HAYISHUV</strong> Hachsharat HaYishuv, founded in 1909 as the Zionist movement’s development company, played a central role in shaping the land on which Tel Aviv emerged.</p>
 <p>Focused on land acquisition and development, it purchased and consolidated parcels and prepared them for settlement.</p>
 <p>Working alongside the Jewish National Fund, it facilitated independent Jewish urban expansion north and east of Jaffa at a time when dunes and orchards were just beginning to be transformed.</p>
 <p>The city’s origins trace to the Ahuzat Bayit association, a cooperative of sixty-six families who purchased plots from the residents of Summayl that same year. With legal and financial support from Hachsharat HaYishuv and JNF-backed loans, the group laid out streets, installed electricity, dug wells, built drainage systems, and coordinated one of the city’s earliest organized infrastructure projects.</p>
@@ -728,7 +795,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 <div class="s13-rail">
 <div class="s13-text" id="s13-text">
 <p style="color:#777;">Casino and Bathing Beach, Tel Aviv.</p>
-<p><strong>TEL AVIV BEACH TOWN</strong>: In the 1920s and 1930s, Tel Aviv’s shoreline became a defining arena of hedonism and imperial presence along the Mediterranean.</p>
+<p><strong>TEL AVIV BEACH TOWN</strong> Tel Aviv Beach town: In the 1920s and 1930s, Tel Aviv’s shoreline became a defining arena of hedonism and imperial presence along the Mediterranean.</p>
 <p>Early bathing beaches—Havatselet, Nordau, and Jerusalem (Geula)—fostered an unbuttoned, informal body culture. Mixed bathing grew increasingly common, and the beach emerged as a central site of the city’s relaxed, liberal, physical, and decadent character.</p>
 <p>Alongside this seaside culture, the waterfront Casino rose in the early 1930s, its open-air terraces hosting dancing, music, and social gatherings. Artists, intellectuals, and young urbanites flocked there, seeing in it a glimpse of Tel Aviv’s cosmopolitan aspirations.</p>
 <p>During the British Mandatory period, soldiers became a familiar presence along the beach, their uniforms, accents, and colonial traces reflecting the promise and tensions of the political moment.</p>
