@@ -421,7 +421,7 @@ background:#eaeeec;
   right: 20px;
 }
 .hero-title {
-  font-size: 11vw !important; 
+  font-size: 11vw !important; /* STEP 1: Updated from 72px */
   line-height: 1.05;
   word-wrap: break-word;
 }
@@ -471,34 +471,27 @@ object-fit:contain;
 display:block;
 }
 
-/* ==== TEXT OVERLAY ==== */
-/* Updated Padding for S1-S14 Only */
+/* ==== TEXT OVERLAY (UNTOUCHED) ==== */
 .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
 position:relative !important;
 opacity:1 !important;
 pointer-events:auto !important;
 transform:none !important;
-padding:0 20px 60px !important; /* Refined Padding */
+padding:0 20px 80px; 
 max-width:100% !important;
 margin:0 auto;
 background:#eaeeec !important;
 z-index:2;
 }
-
-/* S15 Overlay: Kept exactly as your working version */
 .s15-overlay {
-position:relative !important;
-opacity:1 !important;
-pointer-events:auto !important;
-transform:none !important;
 background: transparent !important;
 max-width: 100% !important;
 padding: 80px 20px 80px !important;
 margin: 0 auto !important;
+position: relative !important;
 z-index: 5 !important;
 }
-
 .s1-rail, .s2-rail, .s4-rail, .s5-rail,
 .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
 position:relative !important;
@@ -515,19 +508,16 @@ transform: none !important;
 margin: 0 auto !important;
 }
 
-/* ==== TEXT ==== */
-/* Refined Margins for S1-S14 Only */
+/* ==== TEXT (UNTOUCHED) ==== */
 .s1-text, .s2-text, .s4-text, .s5-text,
-.s9-text, .s11-text, .s13-text, .s14-text {
+.s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
 transform:none !important;
 color:#111;
 text-align:left;
 font-size:18px;
 line-height:26px;
-margin:60px 0 60px 0 !important; /* Refined Margin */
+margin:80px 0 80px 0;
 }
-
-/* S15 Text: Kept exactly as your working version */
 .s15-text {
 color:#fff !important;
 text-align:center !important;
@@ -542,7 +532,7 @@ transform: translateX(-50%) !important;
 .s15-text a {
 color:#fff !important;
 text-decoration: none !important;
-transition: color 0.2s ease;
+transition: color .2s ease;
 display: inline-block !important;
 position: relative !important;
 z-index: 100 !important;
@@ -565,6 +555,7 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
 */
 @media (min-width:601px) and (max-width:1023px) {
 .hero-title {
+/* STEP 1: Updated to 11vw inside the clamp for consistency */
 font-size: clamp(80px, 11vw, 110px) !important;
 line-height: 1.05 !important;
 }
@@ -577,12 +568,10 @@ line-height: 28px !important;
 min-height: 200vh !important;
 background: #eaeeec !important;
 }
-
-/* S1-S14 Overlay Column */
 .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
 max-width: 600px !important;
-padding: 0 20px 60px !important; /* Updated Padding */
+padding:0 !important;
 margin:0 auto !important;
 background:#eaeeec !important;
 position: relative !important;
@@ -590,18 +579,11 @@ opacity: 1 !important;
 pointer-events: auto !important;
 transform: none !important;
 }
-
-/* S15 Tablet Overlay: Stays Full Width/Transparent */
 .s15-overlay {
 background: transparent !important;
-max-width: 100% !important;
 padding: 80px 0 80px 0 !important;
 z-index: 5 !important;
-position: relative !important;
-opacity: 1 !important;
-margin: 0 auto !important;
 }
-
 .s1-frame, .s2-frame, .s4-frame, .s5-frame,
 .s9-frame, .s11-frame, .s13-frame, .s14-frame {
 position: absolute !important;
@@ -613,30 +595,22 @@ top: 0 !important;
 bottom: 0 !important;
 padding: 20px !important;
 }
-
-/* S1-S14 Text Tablet */
 .s1-text, .s2-text, .s4-text, .s5-text,
-.s9-text, .s11-text, .s13-text, .s14-text {
+.s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
 padding: 0 20px !important;
-margin: 60px auto 60px auto !important; /* Updated Margin */
+margin: 80px auto 80px auto !important;
 left: auto !important;
 transform: none !important;
 max-width: 100% !important;
 width: auto !important;
 text-align: left !important;
 }
-
-/* S15 Text Tablet: Centered */
 .s15-text {
 text-align: center !important;
 color: #fff !important;
 left: 50% !important;
 transform: translateX(-50%) !important;
-width: 100% !important;
-position: relative !important;
-margin: 80px auto !important;
 }
-
 .galA-left-frame, .galB-center-frame, .galC-left-frame {
 width: 600px !important;
 left: 50% !important;
@@ -644,7 +618,6 @@ transform: translateX(-50%) !important;
 padding: 0 20px !important;
 }
 }
-
 
 </style>
 </head>
