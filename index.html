@@ -532,27 +532,34 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     margin-bottom: 0 !important;
   }
 
-  /* S15 Text and Link Styling */
+/* S15 Text (Centering Fix for Mobile Viewport) */
   .s15-text {
-    color:#fff !important;
-    text-align:center !important;
+    color: #fff !important;
+    text-align: center !important;
+    padding: 0 20px !important; /* Prevents text from hitting screen edges */
     margin: 60px auto !important;
-    max-width: 100% !important;
+    
+    /* Resetting centering logic to use full viewport width */
     width: 100% !important;
+    max-width: 100% !important;
     position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important; 
+    box-sizing: border-box !important;
   }
 
   .s15-text a {
-    color:#fff !important;
+    color: #fff !important;
     text-decoration: none !important;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
     display: inline-block !important;
     position: relative !important;
     z-index: 100 !important;
   }
-  .s15-text a:hover {
+
+  .s15-text a:hover, 
+  .s15-text a:focus {
     color: #00A86B !important;
     opacity: 1 !important;
   }
