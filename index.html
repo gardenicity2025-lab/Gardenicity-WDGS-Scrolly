@@ -421,12 +421,13 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     right: 20px;
   }
 
+  /* FIX 1: Title Cutting Off */
   .hero-title {
-    font-size: 11vw !important; 
+    font-size: 11vw !important; /* Scalable size to prevent cutoff */
     line-height: 1.05;
-    word-wrap: break-word; 
+    word-wrap: break-word; /* Safety for long words */
     overflow-wrap: break-word;
-    max-width: 90vw; 
+    max-width: 90vw; /* Keeps text away from the absolute edge */
   }
 
   .hero-links {
@@ -475,34 +476,31 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     display:block;
   }
 
-  /* ==== TEXT OVERLAY ==== */
+  /* ==== TEXT OVERLAY (Base Structure & BACKGROUND) ==== */
   .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
     position:relative !important;
     opacity:1 !important;
     pointer-events:auto !important;
     transform:none !important;
-    padding: 0 20px !important; 
+    padding: 0 20px !important; /* Standardized side padding */
     max-width:100% !important;
     margin:0 auto;
     background:#eaeeec !important;
     z-index:2;
   }
 
-  /* S15 Overlay: Transparent to show image below */
+  /* S15 Overlay Overrides */
   .s15-overlay {
-    position:relative !important;
-    opacity:1 !important;
-    pointer-events:auto !important;
-    transform:none !important;
-    padding: 0 20px !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
     background: transparent !important;
+    max-width: 100% !important;
+    padding: 60px 20px !important; /* Balanced top/bottom */
+    margin: 0 auto !important;
+    position: relative !important;
     z-index: 5 !important;
   }
 
-  /* Rail Structural Reset (Applied to all) */
+  /* S15 Rail Structural Reset */
   .s1-rail, .s2-rail, .s4-rail, .s5-rail,
   .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
     position:relative !important;
@@ -513,30 +511,37 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     transform: none !important;
   }
 
-  /* Standard Section Text */
+  /* ==== TEXT (Margins & Color) ==== */
+  /* FIX 2: Symmetrical Padding/Margins */
   .s1-text, .s2-text, .s4-text, .s5-text,
-  .s9-text, .s11-text, .s13-text, .s14-text {
+  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
     transform:none !important;
     color:#111;
     text-align:left;
     font-size:18px;
     line-height:26px;
+    /* Reduced margin and made it equal top/bottom */
     margin: 60px 0 !important; 
     padding: 0 !important;
   }
 
-  /* S15 Text: White and Centered */
+  /* Prevents the last element inside the text block from adding extra bottom space */
+  .s1-text *:last-child, .s2-text *:last-child, .s4-text *:last-child, 
+  .s5-text *:last-child, .s9-text *:last-child, .s11-text *:last-child, 
+  .s13-text *:last-child, .s14-text *:last-child, .s15-text *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* S15 Text and Link Styling */
   .s15-text {
     color:#fff !important;
     text-align:center !important;
-    font-size:18px;
-    line-height:26px;
     margin: 60px auto !important;
     max-width: 100% !important;
     width: 100% !important;
     position: relative !important;
-    left: 0 !important; /* Forces it to stay in the center of the screen portal */
-    transform: none !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   .s15-text a {
@@ -549,6 +554,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   }
   .s15-text a:hover {
     color: #00A86B !important;
+    opacity: 1 !important;
   }
 
   /* ==== GALLERIES & FULL BLEEDS ==== */
@@ -563,6 +569,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 /*
 =====================================================
 TABLET RESPONSIVE (min-width:601px and max-width:1023px)
+(Kept as requested)
 =====================================================
 */
 @media (min-width:601px) and (max-width:1023px) {
@@ -580,7 +587,7 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     background: #eaeeec !important;
   }
   .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
     max-width: 600px !important;
     padding:0 !important;
     margin:0 auto !important;
@@ -590,17 +597,11 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     pointer-events: auto !important;
     transform: none !important;
   }
-  
-  /* S15 Tablet: Transparent */
   .s15-overlay {
-    max-width: 600px !important;
-    margin: 0 auto !important;
     background: transparent !important;
-    padding: 80px 0 !important;
+    padding: 80px 0 80px 0 !important;
     z-index: 5 !important;
-    position: relative !important;
   }
-
   .s1-frame, .s2-frame, .s4-frame, .s5-frame,
   .s9-frame, .s11-frame, .s13-frame, .s14-frame {
     position: absolute !important;
@@ -612,31 +613,22 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     bottom: 0 !important;
     padding: 20px !important;
   }
-  
   .s1-text, .s2-text, .s4-text, .s5-text,
-  .s9-text, .s11-text, .s13-text, .s14-text {
+  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
     padding: 0 20px !important;
-    margin: 80px auto !important;
+    margin: 80px auto 80px auto !important;
     left: auto !important;
     transform: none !important;
     max-width: 100% !important;
     width: auto !important;
     text-align: left !important;
   }
-
-  /* S15 Tablet Text: Centered White */
   .s15-text {
     text-align: center !important;
     color: #fff !important;
-    padding: 0 20px !important;
-    margin: 80px auto !important;
-    position: relative !important;
-    left: 0 !important;
-    transform: none !important;
-    max-width: 100% !important;
-    width: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
-
   .galA-left-frame, .galB-center-frame, .galC-left-frame {
     width: 600px !important;
     left: 50% !important;
@@ -644,8 +636,6 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     padding: 0 20px !important;
   }
 }
-
-
 
 </style>
 </head>
