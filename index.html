@@ -403,239 +403,133 @@ color:#00A86B;
 
 /*
 =====================================================
-MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
-(Your original working mobile code)
+MOBILE RESPONSIVE (max-width:600px) 
 =====================================================
 */
 @media (max-width:600px){
-body {
-margin:0;
-padding:0;
-background:#eaeeec;
-}
+  body { margin:0; padding:0; background:#eaeeec; }
 
-/* ==== HERO Link Styles ==== */
-.hero-media {
-  top: 20px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-}
-.hero-title {
-  font-size: 72px;
-  line-height: 1.05;
-}
-.hero-links {
-  font-size: 20px;
-  line-height: 26px;
-}
-.hero-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.hero-links a:hover,
-.hero-links a:focus-visible {
-  color: #00A86B;
-}
-.hero-links .dead-link {
-  color: #fff;
-  cursor: default; /* indicates non-clickable */
-  text-decoration: none;
-}
+  /* ==== HERO (Updated to 11vw) ==== */
+  .hero-media { top: 20px; bottom: 20px; left: 20px; right: 20px; }
+  .hero-title {
+    font-size: 11vw !important; /* Updated from 72px */
+    line-height: 1.05;
+    word-wrap: break-word;
+    max-width: 90vw;
+  }
+  .hero-links { font-size: 20px; line-height: 26px; }
+  .hero-links a { color: #fff; text-decoration: none; transition: color 0.2s ease; }
+  .hero-links a:hover { color: #00A86B; }
 
-/* ==== SECTION WRAPS (No changes) ==== */
-.s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
-.s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
-position:relative;
-min-height:200vh;
-background:#eaeeec;
-}
-/* ==== SECTION IMAGES (No changes) ==== */
-.s1-frame, .s2-frame, .s4-frame, .s5-frame,
-.s9-frame, .s11-frame, .s13-frame, .s14-frame {
-position:fixed;
-top:20px; bottom:20px; left:20px; right:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:1;
-pointer-events:none;
-}
-.s1-frame img, .s2-frame img, .s4-frame img, .s5-frame img,
-.s9-frame img, .s11-frame img, .s13-frame img, .s14-frame img {
-width:100%;
-height:auto;
-object-fit:contain;
-display:block;
-}
-/* ==== TEXT OVERLAY (Base Structure & BACKGROUND) ==== */
-.s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
-position:relative !important;
-opacity:1 !important;
-pointer-events:auto !important;
-transform:none !important;
-padding:0 20px 80px; /* Base padding */
-max-width:100% !important; /* Full width */
-margin:0 auto;
-background:#eaeeec !important; /* Base background for S1-S14 */
-z-index:2;
-}
-/* S15 Overlay Overrides */
-.s15-overlay {
-background: transparent !important;
-max-width: 100% !important;
-padding: 80px 20px 80px !important; /* 80px Top/Bottom, 20px Left/Right */
-margin: 0 auto !important;
-position: relative !important;
-z-index: 5 !important;
-}
-/* S15 Rail Structural Reset */
-.s1-rail, .s2-rail, .s4-rail, .s5-rail,
-.s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
-position:relative !important;
-width:100% !important;
-margin:0 !important;
-left:auto !important;
-right:auto !important;
-transform: none !important;
-}
-.s15-rail {
-left: 0 !important;
-right: 0 !important;
-transform: none !important;
-margin: 0 auto !important;
-}
-/* ==== TEXT (Margins & Color) ==== */
-.s1-text, .s2-text, .s4-text, .s5-text,
-.s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
-transform:none !important;
-color:#111;
-text-align:left;
-font-size:18px;
-line-height:26px;
-margin:80px 0 80px 0;
-}
-/* S15 Text and Link Styling */
-.s15-text {
-color:#fff !important;
-text-align:center !important;
-padding:0 !important;
-margin: 80px auto 80px auto !important;
-max-width: 100% !important;
-width: 100% !important;
-position: relative !important;
-left: 50% !important;
-transform: translateX(-50%) !important;
-}
-/* S15 Link Fixes */
-.s15-text a {
-color:#fff !important;
-text-decoration: none !important;
-transition: color .2s ease;
-display: inline-block !important;
-position: relative !important;
-z-index: 100 !important;
-}
-.s15-text a:hover, .s15-text a:focus, .s15-text a:focus-visible, .s15-text a:active {
-color: #00A86B !important;
-opacity: 1 !important;
-}
-/* ==== GALLERIES & FULL BLEEDS (No changes) ==== */
-.galA-left-frame, .galB-center-frame, .galC-left-frame {
-left:20px; right:20px;
-}
-.frame.s3-frame, .frame.s8-frame, .frame.s12-frame, .frame.s15-frame {
-left:0; right:0; top:0; bottom:0;
-}
+  /* ==== SECTION WRAPS & IMAGES (No changes) ==== */
+  .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap, .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
+    position:relative; min-height:200vh; background:#eaeeec;
+  }
+  .s1-frame, .s2-frame, .s4-frame, .s5-frame, .s9-frame, .s11-frame, .s13-frame, .s14-frame {
+    position:fixed; top:20px; bottom:20px; left:20px; right:20px;
+    display:flex; align-items:center; justify-content:center; z-index:1; pointer-events:none;
+  }
+  .s1-frame img, .s2-frame img, .s4-frame img, .s5-frame img, .s9-frame img, .s11-frame img, .s13-frame img, .s14-frame img {
+    width:100%; height:auto; object-fit:contain; display:block;
+  }
+
+  /* ==== TEXT OVERLAY (Refined Padding) ==== */
+  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
+  .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+    position:relative !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    transform:none !important;
+    padding: 0 20px !important; /* Refined from 80px bottom */
+    max-width:100% !important;
+    margin:0 auto;
+    background:#eaeeec !important;
+    z-index:2;
+  }
+
+  /* S15 Overlay Overrides (Restored to working beach version) */
+  .s15-overlay {
+    background: transparent !important;
+    max-width: 100% !important;
+    padding: 80px 20px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  /* Structural Resets */
+  .s1-rail, .s2-rail, .s4-rail, .s5-rail, .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
+    position:relative !important; width:100% !important; margin:0 !important; left:auto !important; right:auto !important; transform: none !important;
+  }
+
+  /* S1-S14 Text (Refined Margins) */
+  .s1-text, .s2-text, .s4-text, .s5-text, .s9-text, .s11-text, .s13-text, .s14-text {
+    transform:none !important; color:#111; text-align:left; font-size:18px; line-height:26px;
+    margin: 60px 0 !important; /* Refined from 80px */
+  }
+
+  /* S15 Text (Restored Working Centering) */
+  .s15-text {
+    color:#fff !important;
+    text-align:center !important;
+    margin: 80px auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .s15-text a { color:#fff !important; text-decoration: none !important; display: inline-block !important; }
+  .s15-text a:hover { color: #00A86B !important; }
+
+  /* ==== GALLERIES ==== */
+  .galA-left-frame, .galB-center-frame, .galC-left-frame { left:20px; right:20px; }
+  .frame.s3-frame, .frame.s8-frame, .frame.s12-frame, .frame.s15-frame { left:0; right:0; top:0; bottom:0; }
 }
 
 /*
 =====================================================
-TABLET RESPONSIVE (min-width:601px and max-width:1023px) - FINAL FIXES + DYNAMIC HERO TEXT
+TABLET RESPONSIVE (601px - 1023px)
 =====================================================
 */
 @media (min-width:601px) and (max-width:1023px) {
-/* Hero Text Scaling (New Addition) */
-.hero-title {
-/* Clamps font size between 80px (at 601px width) and 100px (at 1023px width) */
-font-size: clamp(80px, 12vw, 100px) !important;
-line-height: 1.05 !important;
+  .hero-title { font-size: clamp(80px, 12vw, 100px) !important; }
+  .hero-links { font-size: 24px !important; line-height: 28px !important; }
+
+  .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap, .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
+    min-height: 200vh !important; background: #eaeeec !important;
+  }
+
+  /* S1-S14 Column Restriction */
+  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+    max-width: 600px !important; padding:0 !important; margin:0 auto !important; background:#eaeeec !important; position: relative !important;
+  }
+
+  /* S15 Tablet (Unlocked from 600px column to prevent truncation) */
+  .s15-overlay {
+    background: transparent !important;
+    max-width: 100% !important;
+    padding: 80px 0 !important;
+    z-index: 5 !important;
+  }
+
+  .s1-frame, .s2-frame, .s4-frame, .s5-frame, .s9-frame, .s11-frame, .s13-frame, .s14-frame {
+    position: absolute !important; left: 50% !important; transform: translateX(-50%) !important;
+    width: 600px !important; margin: 0 auto !important; top: 0 !important; bottom: 0 !important; padding: 20px !important;
+  }
+
+  .s1-text, .s2-text, .s4-text, .s5-text, .s9-text, .s11-text, .s13-text, .s14-text {
+    padding: 0 20px !important; margin: 80px auto !important; text-align: left !important;
+  }
+
+  /* S15 Tablet Centering Fix */
+  .s15-text {
+    text-align: center !important; color: #fff !important;
+    left: 50% !important; transform: translateX(-50%) !important;
+    width: 100% !important; max-width: 800px !important;
+  }
 }
-/* Hero Text Scaling (Updated Addition) */
-.hero-title {
-/* Title remains Dynamic and scales smoothly */
-font-size: clamp(80px, 12vw, 100px) !important;
-line-height: 1.05 !important;
-}
-.hero-links {
-/* Links are now Static (Fixed Jump) for predictability */
-font-size: 24px !important;
-line-height: 28px !important;
-}
-/* Structural & Containment Fixes (From previous successful steps) */
-/* 1. Ensure sections are scrollable and have background */
-.s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
-.s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
-min-height: 200vh !important;
-background: #eaeeec !important;
-}
-/* 2. Base content wrappers are restricted and centered (Text/Overlay Column) */
-.s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
-.s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
-max-width: 600px !important;
-padding:0 !important;
-margin:0 auto !important;
-background:#eaeeec !important;
-position: relative !important;
-opacity: 1 !important;
-pointer-events: auto !important;
-transform: none !important;
-}
-.s15-overlay {
-background: transparent !important;
-padding: 80px 0 80px 0 !important;
-z-index: 5 !important;
-}
-/* 3. Section Images - Constrain them to the 600px column */
-.s1-frame, .s2-frame, .s4-frame, .s5-frame,
-.s9-frame, .s11-frame, .s13-frame, .s14-frame {
-position: absolute !important;
-left: 50% !important;
-transform: translateX(-50%) !important;
-width: 600px !important;
-margin: 0 auto !important;
-top: 0 !important;
-bottom: 0 !important;
-padding: 20px !important;
-}
-/* 4. Text Rail and Inner Text */
-.s1-text, .s2-text, .s4-text, .s5-text,
-.s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
-padding: 0 20px !important;
-margin: 80px auto 80px auto !important;
-left: auto !important;
-transform: none !important;
-max-width: 100% !important;
-width: auto !important;
-text-align: left !important;
-}
-/* S15 Text (Centering Fix) */
-.s15-text {
-text-align: center !important;
-color: #fff !important;
-left: 50% !important;
-transform: translateX(-50%) !important;
-}
-/* 5. Gallery Frames: Constrain them to the 600px column (for future proofing) */
-.galA-left-frame, .galB-center-frame, .galC-left-frame {
-width: 600px !important;
-left: 50% !important;
-transform: translateX(-50%) !important;
-padding: 0 20px !important;
-}
-}
+
 </style>
 </head>
 <body>
