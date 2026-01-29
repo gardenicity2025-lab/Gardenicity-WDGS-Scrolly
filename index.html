@@ -423,11 +423,11 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 
   /* FIX 1: Title Cutting Off */
   .hero-title {
-    font-size: 11vw !important; /* Scalable size to prevent cutoff */
+    font-size: 11vw !important; 
     line-height: 1.05;
-    word-wrap: break-word; /* Safety for long words */
+    word-wrap: break-word; 
     overflow-wrap: break-word;
-    max-width: 90vw; /* Keeps text away from the absolute edge */
+    max-width: 90vw; 
   }
 
   .hero-links {
@@ -483,7 +483,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     opacity:1 !important;
     pointer-events:auto !important;
     transform:none !important;
-    padding: 0 20px !important; /* Standardized side padding */
+    padding: 0 20px !important; 
     max-width:100% !important;
     margin:0 auto;
     background:#eaeeec !important;
@@ -494,7 +494,7 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   .s15-overlay {
     background: transparent !important;
     max-width: 100% !important;
-    padding: 60px 20px !important; /* Balanced top/bottom */
+    padding: 60px 20px !important; 
     margin: 0 auto !important;
     position: relative !important;
     z-index: 5 !important;
@@ -512,27 +512,18 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   }
 
   /* ==== TEXT (Margins & Color) ==== */
-  /* FIX 2: Symmetrical Padding/Margins */
   .s1-text, .s2-text, .s4-text, .s5-text,
-  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
+  .s9-text, .s11-text, .s13-text, .s14-text {
     transform:none !important;
     color:#111;
     text-align:left;
     font-size:18px;
     line-height:26px;
-    /* Reduced margin and made it equal top/bottom */
     margin: 60px 0 !important; 
     padding: 0 !important;
   }
 
-  /* Prevents the last element inside the text block from adding extra bottom space */
-  .s1-text *:last-child, .s2-text *:last-child, .s4-text *:last-child, 
-  .s5-text *:last-child, .s9-text *:last-child, .s11-text *:last-child, 
-  .s13-text *:last-child, .s14-text *:last-child, .s15-text *:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  /* S15 Text and Link Styling */
+  /* S15 Text - Simplified Centering */
   .s15-text {
     color:#fff !important;
     text-align:center !important;
@@ -540,8 +531,15 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     max-width: 100% !important;
     width: 100% !important;
     position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    /* Removed the left:50% drift logic */
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  .s1-text *:last-child, .s2-text *:last-child, .s4-text *:last-child, 
+  .s5-text *:last-child, .s9-text *:last-child, .s11-text *:last-child, 
+  .s13-text *:last-child, .s14-text *:last-child, .s15-text *:last-child {
+    margin-bottom: 0 !important;
   }
 
   .s15-text a {
@@ -569,7 +567,6 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
 /*
 =====================================================
 TABLET RESPONSIVE (min-width:601px and max-width:1023px)
-(Kept as requested)
 =====================================================
 */
 @media (min-width:601px) and (max-width:1023px) {
@@ -614,7 +611,7 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     padding: 20px !important;
   }
   .s1-text, .s2-text, .s4-text, .s5-text,
-  .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
+  .s9-text, .s11-text, .s13-text, .s14-text {
     padding: 0 20px !important;
     margin: 80px auto 80px auto !important;
     left: auto !important;
@@ -623,12 +620,20 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     width: auto !important;
     text-align: left !important;
   }
+  
+  /* S15 Tablet - Standardized width for central alignment */
   .s15-text {
     text-align: center !important;
     color: #fff !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 80px 0 !important;
+    position: relative !important;
+    /* Resetting transform to keep it inside the portal */
+    left: 0 !important;
+    transform: none !important;
   }
+
   .galA-left-frame, .galB-center-frame, .galC-left-frame {
     width: 600px !important;
     left: 50% !important;
