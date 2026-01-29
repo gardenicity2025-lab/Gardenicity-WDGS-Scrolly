@@ -407,97 +407,73 @@ MOBILE RESPONSIVE (max-width:600px)
 =====================================================
 */
 @media (max-width:600px){
-  body { margin:0; padding:0; background:#eaeeec; }
+  body { margin:0; padding:0; background:#eaeeec; overflow-x: hidden; }
 
-  .hero-media { top: 20px; bottom: 20px; left: 20px; right: 20px; }
-  .hero-title { font-size: 11vw !important; line-height: 1.05; word-wrap: break-word; max-width: 90vw; }
-  .hero-links { font-size: 20px; line-height: 26px; }
-
-  .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap, .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
-    position:relative; min-height:200vh; background:#eaeeec;
-  }
-
-  /* Standard Overlay with your Padding */
+  /* Maintain your hero and general scrolly structure */
+  .hero-title { font-size: 11vw !important; line-height: 1.05; max-width: 90vw; }
+  
   .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
     position:relative !important;
     opacity:1 !important;
-    padding: 0 20px !important; 
+    padding: 0 20px 80px !important;
     max-width:100% !important;
     margin:0 auto;
     background:#eaeeec !important;
     z-index:2;
   }
 
-  /* S15 SPECIAL CASE: Transparent & Centered */
-  .s15-overlay {
-    background: transparent !important;
-    padding: 60px 20px !important;
-  }
+  .s15-overlay { background: transparent !important; }
 
-  .s1-rail, .s2-rail, .s4-rail, .s5-rail, .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
-    position:relative !important;
-    width:100% !important;
-    margin:0 !important;
-    left:0 !important;
-    transform: none !important;
-  }
-
-  .s1-text, .s2-text, .s4-text, .s5-text, .s9-text, .s11-text, .s13-text, .s14-text {
-    text-align:left; font-size:18px; line-height:26px; margin: 60px 0 !important; 
-  }
-
-  /* S15 TEXT: The "No-Shift" Fix */
+  /* THE STABLE CENTERING FIX */
   .s15-text {
-    color:#fff !important;
-    text-align:center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    left: 0 !important;       /* REMOVED 50% */
-    transform: none !important; /* REMOVED TRANSLATE */
-    margin: 60px 0 !important;
+    color: #fff !important;
+    text-align: center !important;
+    /* Keep the scrollytelling positioning logic */
     position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* Force the width to be the viewport width so it can't shift or truncate */
+    width: 90vw !important; 
+    max-width: 90vw !important;
+    margin: 80px 0 !important;
+    box-sizing: border-box !important;
   }
 
-  .s15-text a { color:#fff !important; text-decoration: none !important; display: inline-block !important; }
+  .s15-text a { color:#fff !important; display: inline-block !important; }
 }
 
 /*
 =====================================================
-TABLET RESPONSIVE (min-width:601px and max-width:1023px)
+TABLET RESPONSIVE (601px - 1023px)
 =====================================================
 */
 @media (min-width:601px) and (max-width:1023px) {
-  .hero-title { font-size: clamp(80px, 12vw, 100px) !important; line-height: 1.05 !important; }
-  .hero-links { font-size: 24px !important; line-height: 28px !important; }
+  .hero-title { font-size: clamp(80px, 12vw, 100px) !important; }
 
-  /* Overlays: S1-S14 stay 600px, S15 goes 100% */
-  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+  /* Keep the 600px column logic for S1-S14 */
+  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
     max-width: 600px !important;
-    margin:0 auto !important;
-    background:#eaeeec !important;
+    margin: 0 auto !important;
     position: relative !important;
-    padding: 0 20px !important;
+    background: #eaeeec !important;
   }
 
-  .s15-overlay {
-    max-width: 100% !important; /* PREVENTS TRUNCATION */
-    width: 100% !important;
-    background: transparent !important;
-    padding: 80px 20px !important;
-    margin: 0 !important;
-  }
+  .s15-overlay { background: transparent !important; }
 
-  /* S15 TEXT: Centered on Tablet */
+  /* TABLET CENTERING FIX */
   .s15-text {
-    text-align: center !important;
     color: #fff !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    left: 0 !important;
-    transform: none !important;
+    text-align: center !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* Increase width for tablet to prevent truncation */
+    width: 85vw !important;
+    max-width: 800px !important; 
     margin: 80px 0 !important;
   }
 }
+
 
 
 
