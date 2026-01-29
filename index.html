@@ -421,7 +421,6 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     right: 20px;
   }
 
-  /* FIX 1: Title Cutting Off */
   .hero-title {
     font-size: 11vw !important; 
     line-height: 1.05;
@@ -494,8 +493,8 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   .s15-overlay {
     background: transparent !important;
     max-width: 100% !important;
-    padding: 60px 20px !important; 
-    margin: 0 auto !important;
+    padding: 60px 0 !important; 
+    margin: 0 !important;
     position: relative !important;
     z-index: 5 !important;
   }
@@ -506,8 +505,8 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     position:relative !important;
     width:100% !important;
     margin:0 !important;
-    left:auto !important;
-    right:auto !important;
+    left:0 !important;
+    right:0 !important;
     transform: none !important;
   }
 
@@ -523,16 +522,17 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
     padding: 0 !important;
   }
 
-  /* S15 Text - Simplified Centering */
+  /* S15 Text - The Absolute Reset */
   .s15-text {
     color:#fff !important;
     text-align:center !important;
     margin: 60px auto !important;
+    width: calc(100% - 40px) !important; /* Forces 20px margins on both sides */
     max-width: 100% !important;
-    width: 100% !important;
     position: relative !important;
-    /* Removed the left:50% drift logic */
+    /* Forcing these to 0/none overrides the JS script's desktop logic */
     left: 0 !important;
+    right: 0 !important;
     transform: none !important;
   }
 
@@ -552,7 +552,6 @@ MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
   }
   .s15-text a:hover {
     color: #00A86B !important;
-    opacity: 1 !important;
   }
 
   /* ==== GALLERIES & FULL BLEEDS ==== */
@@ -572,11 +571,9 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
 @media (min-width:601px) and (max-width:1023px) {
   .hero-title {
     font-size: clamp(80px, 12vw, 100px) !important;
-    line-height: 1.05 !important;
   }
   .hero-links {
     font-size: 24px !important;
-    line-height: 28px !important;
   }
   .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
   .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
@@ -596,8 +593,9 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
   }
   .s15-overlay {
     background: transparent !important;
-    padding: 80px 0 80px 0 !important;
+    padding: 80px 0 !important;
     z-index: 5 !important;
+    max-width: 100% !important; /* Unlock tablet rail for footer */
   }
   .s1-frame, .s2-frame, .s4-frame, .s5-frame,
   .s9-frame, .s11-frame, .s13-frame, .s14-frame {
@@ -613,24 +611,22 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
   .s1-text, .s2-text, .s4-text, .s5-text,
   .s9-text, .s11-text, .s13-text, .s14-text {
     padding: 0 20px !important;
-    margin: 80px auto 80px auto !important;
+    margin: 80px auto !important;
     left: auto !important;
     transform: none !important;
     max-width: 100% !important;
     width: auto !important;
     text-align: left !important;
   }
-  
-  /* S15 Tablet - Standardized width for central alignment */
+
   .s15-text {
     text-align: center !important;
     color: #fff !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 80px 0 !important;
+    width: calc(100% - 80px) !important;
+    margin: 80px auto !important;
     position: relative !important;
-    /* Resetting transform to keep it inside the portal */
     left: 0 !important;
+    right: 0 !important;
     transform: none !important;
   }
 
@@ -641,6 +637,7 @@ TABLET RESPONSIVE (min-width:601px and max-width:1023px)
     padding: 0 20px !important;
   }
 }
+
 
 
 </style>
