@@ -404,7 +404,6 @@ color:#00A86B;
 /*
 =====================================================
 MOBILE RESPONSIVE (max-width:600px) - DEDICATED MOBILE VIEW
-(Your original working mobile code)
 =====================================================
 */
 @media (max-width:600px){
@@ -422,8 +421,9 @@ background:#eaeeec;
   right: 20px;
 }
 .hero-title {
-  font-size: 72px;
+  font-size: 11vw !important; /* STEP 1: Updated from 72px */
   line-height: 1.05;
+  word-wrap: break-word;
 }
 .hero-links {
   font-size: 20px;
@@ -440,18 +440,19 @@ background:#eaeeec;
 }
 .hero-links .dead-link {
   color: #fff;
-  cursor: default; /* indicates non-clickable */
+  cursor: default;
   text-decoration: none;
 }
 
-/* ==== SECTION WRAPS (No changes) ==== */
+/* ==== SECTION WRAPS ==== */
 .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
 .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
 position:relative;
 min-height:200vh;
 background:#eaeeec;
 }
-/* ==== SECTION IMAGES (No changes) ==== */
+
+/* ==== SECTION IMAGES ==== */
 .s1-frame, .s2-frame, .s4-frame, .s5-frame,
 .s9-frame, .s11-frame, .s13-frame, .s14-frame {
 position:fixed;
@@ -469,29 +470,28 @@ height:auto;
 object-fit:contain;
 display:block;
 }
-/* ==== TEXT OVERLAY (Base Structure & BACKGROUND) ==== */
+
+/* ==== TEXT OVERLAY (UNTOUCHED) ==== */
 .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
 .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
 position:relative !important;
 opacity:1 !important;
 pointer-events:auto !important;
 transform:none !important;
-padding:0 20px 80px; /* Base padding */
-max-width:100% !important; /* Full width */
+padding:0 20px 80px; 
+max-width:100% !important;
 margin:0 auto;
-background:#eaeeec !important; /* Base background for S1-S14 */
+background:#eaeeec !important;
 z-index:2;
 }
-/* S15 Overlay Overrides */
 .s15-overlay {
 background: transparent !important;
 max-width: 100% !important;
-padding: 80px 20px 80px !important; /* 80px Top/Bottom, 20px Left/Right */
+padding: 80px 20px 80px !important;
 margin: 0 auto !important;
 position: relative !important;
 z-index: 5 !important;
 }
-/* S15 Rail Structural Reset */
 .s1-rail, .s2-rail, .s4-rail, .s5-rail,
 .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
 position:relative !important;
@@ -507,7 +507,8 @@ right: 0 !important;
 transform: none !important;
 margin: 0 auto !important;
 }
-/* ==== TEXT (Margins & Color) ==== */
+
+/* ==== TEXT (UNTOUCHED) ==== */
 .s1-text, .s2-text, .s4-text, .s5-text,
 .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
 transform:none !important;
@@ -517,7 +518,6 @@ font-size:18px;
 line-height:26px;
 margin:80px 0 80px 0;
 }
-/* S15 Text and Link Styling */
 .s15-text {
 color:#fff !important;
 text-align:center !important;
@@ -529,7 +529,6 @@ position: relative !important;
 left: 50% !important;
 transform: translateX(-50%) !important;
 }
-/* S15 Link Fixes */
 .s15-text a {
 color:#fff !important;
 text-decoration: none !important;
@@ -538,11 +537,9 @@ display: inline-block !important;
 position: relative !important;
 z-index: 100 !important;
 }
-.s15-text a:hover, .s15-text a:focus, .s15-text a:focus-visible, .s15-text a:active {
-color: #00A86B !important;
-opacity: 1 !important;
-}
-/* ==== GALLERIES & FULL BLEEDS (No changes) ==== */
+.s15-text a:hover { color: #00A86B !important; }
+
+/* ==== GALLERIES ==== */
 .galA-left-frame, .galB-center-frame, .galC-left-frame {
 left:20px; right:20px;
 }
@@ -553,35 +550,24 @@ left:0; right:0; top:0; bottom:0;
 
 /*
 =====================================================
-TABLET RESPONSIVE (min-width:601px and max-width:1023px) - FINAL FIXES + DYNAMIC HERO TEXT
+TABLET RESPONSIVE (min-width:601px and max-width:1023px)
 =====================================================
 */
 @media (min-width:601px) and (max-width:1023px) {
-/* Hero Text Scaling (New Addition) */
 .hero-title {
-/* Clamps font size between 80px (at 601px width) and 100px (at 1023px width) */
-font-size: clamp(80px, 12vw, 100px) !important;
-line-height: 1.05 !important;
-}
-/* Hero Text Scaling (Updated Addition) */
-.hero-title {
-/* Title remains Dynamic and scales smoothly */
-font-size: clamp(80px, 12vw, 100px) !important;
+/* STEP 1: Updated to 11vw inside the clamp for consistency */
+font-size: clamp(80px, 11vw, 110px) !important;
 line-height: 1.05 !important;
 }
 .hero-links {
-/* Links are now Static (Fixed Jump) for predictability */
 font-size: 24px !important;
 line-height: 28px !important;
 }
-/* Structural & Containment Fixes (From previous successful steps) */
-/* 1. Ensure sections are scrollable and have background */
 .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap,
 .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
 min-height: 200vh !important;
 background: #eaeeec !important;
 }
-/* 2. Base content wrappers are restricted and centered (Text/Overlay Column) */
 .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay,
 .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
 max-width: 600px !important;
@@ -598,7 +584,6 @@ background: transparent !important;
 padding: 80px 0 80px 0 !important;
 z-index: 5 !important;
 }
-/* 3. Section Images - Constrain them to the 600px column */
 .s1-frame, .s2-frame, .s4-frame, .s5-frame,
 .s9-frame, .s11-frame, .s13-frame, .s14-frame {
 position: absolute !important;
@@ -610,7 +595,6 @@ top: 0 !important;
 bottom: 0 !important;
 padding: 20px !important;
 }
-/* 4. Text Rail and Inner Text */
 .s1-text, .s2-text, .s4-text, .s5-text,
 .s9-text, .s11-text, .s13-text, .s14-text, .s15-text {
 padding: 0 20px !important;
@@ -621,14 +605,12 @@ max-width: 100% !important;
 width: auto !important;
 text-align: left !important;
 }
-/* S15 Text (Centering Fix) */
 .s15-text {
 text-align: center !important;
 color: #fff !important;
 left: 50% !important;
 transform: translateX(-50%) !important;
 }
-/* 5. Gallery Frames: Constrain them to the 600px column (for future proofing) */
 .galA-left-frame, .galB-center-frame, .galC-left-frame {
 width: 600px !important;
 left: 50% !important;
@@ -636,6 +618,7 @@ transform: translateX(-50%) !important;
 padding: 0 20px !important;
 }
 }
+
 </style>
 </head>
 <body>
