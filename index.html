@@ -407,63 +407,45 @@ MOBILE RESPONSIVE (max-width:600px)
 =====================================================
 */
 @media (max-width:600px){
-  body { margin:0; padding:0; background:#eaeeec; }
+  body { margin:0; padding:0; background:#eaeeec; overflow-x: hidden; }
 
-  /* ==== HERO (Current Version) ==== */
+  /* Keep Hero and S1-S14 exactly as they are in your reverted code */
   .hero-media { top: 20px; bottom: 20px; left: 20px; right: 20px; }
-  .hero-title { font-size: 11vw !important; line-height: 1.05; word-wrap: break-word; max-width: 90vw; }
-  .hero-links { font-size: 20px; line-height: 26px; }
-
-  /* ==== SECTION WRAPS & IMAGES (Current Version) ==== */
+  .hero-title { font-size: 11vw !important; line-height: 1.05; max-width: 90vw; }
+  
   .s1-wrap, .s2-wrap, .s4-wrap, .s5-wrap, .s9-wrap, .s11-wrap, .s13-wrap, .s14-wrap {
     position:relative; min-height:200vh; background:#eaeeec;
   }
-  .s1-frame, .s2-frame, .s4-frame, .s5-frame, .s9-frame, .s11-frame, .s13-frame, .s14-frame {
-    position:fixed; top:20px; bottom:20px; left:20px; right:20px;
-    display:flex; align-items:center; justify-content:center; z-index:1; pointer-events:none;
-  }
-  .s1-frame img, .s2-frame img, .s4-frame img, .s5-frame img, .s9-frame img, .s11-frame img, .s13-frame img, .s14-frame img {
-    width:100%; height:auto; object-fit:contain; display:block;
+
+  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
+    position:relative !important; opacity:1 !important; padding: 0 20px !important; 
+    max-width:100% !important; margin:0 auto; background:#eaeeec !important; z-index:2;
   }
 
-  /* ==== TEXT OVERLAY (Current Version) ==== */
-  .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay, .s15-overlay {
-    position:relative !important; opacity:1 !important; pointer-events:auto !important;
-    transform:none !important; padding: 0 20px !important; max-width:100% !important;
-    margin:0 auto; background:#eaeeec !important; z-index:2;
-  }
-
-  /* S15 Overlay (Transparency) */
-  .s15-overlay { background: transparent !important; z-index: 5 !important; }
-
-  /* Rail Structural Reset */
-  .s1-rail, .s2-rail, .s4-rail, .s5-rail, .s9-rail, .s11-rail, .s13-rail, .s14-rail, .s15-rail {
-    position:relative !important; width:100% !important; margin:0 !important; transform: none !important; left: 0 !important;
-  }
-
-  /* Standard Text S1-S14 */
-  .s1-text, .s2-text, .s4-text, .s5-text, .s9-text, .s11-text, .s13-text, .s14-text {
-    transform:none !important; color:#111; text-align:left; font-size:18px; line-height:26px; margin: 60px 0 !important; 
-  }
-
-  /* S15 FIXED ALIGNMENT: Based on your working old version */
-  .s15-text {
-    color:#fff !important;
-    text-align:center !important;
-    margin: 80px auto !important;
-    max-width: 100% !important;
-    width: 100% !important;
+  /* S15 FIX: Neutralize the Rail and center to Viewport */
+  .s15-overlay { background: transparent !important; z-index: 5 !important; position: relative !important; }
+  
+  .s15-rail {
     position: relative !important;
-    /* This centering logic works if width is 100% */
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    width: 100vw !important;
+    left: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
-  .s15-text a { color:#fff !important; text-decoration: none !important; display: inline-block !important; }
+  .s15-text {
+    color: #fff !important;
+    text-align: center !important;
+    /* Force the text box to be the full width of the screen minus margins */
+    width: calc(100vw - 40px) !important;
+    margin: 60px 20px !important;
+    position: relative !important;
+    /* Important: Resetting these ensures the JS doesn't "shift" the footer */
+    left: 0 !important;
+    transform: none !important;
+  }
 
-  /* ==== GALLERIES ==== */
-  .galA-left-frame, .galB-center-frame, .galC-left-frame { left:20px; right:20px; }
-  .frame.s3-frame, .frame.s8-frame, .frame.s12-frame, .frame.s15-frame { left:0; right:0; top:0; bottom:0; }
+  .s15-text a { color:#fff !important; text-decoration: none !important; }
 }
 
 /*
@@ -473,43 +455,35 @@ TABLET RESPONSIVE (601px - 1023px)
 */
 @media (min-width:601px) and (max-width:1023px) {
   .hero-title { font-size: clamp(80px, 12vw, 100px) !important; }
-  .hero-links { font-size: 24px !important; }
 
-  /* Sections S1-S14 remain in 600px column */
+  /* S1-S14 Rail Layout */
   .s1-overlay, .s2-overlay, .s4-overlay, .s5-overlay, .s9-overlay, .s11-overlay, .s13-overlay, .s14-overlay {
     max-width: 600px !important; margin:0 auto !important; background:#eaeeec !important; position: relative !important;
   }
 
-  /* S15 TABLET FIX: Prevent Truncation by unlocking the 600px limit */
-  .s15-overlay {
+  /* S15 TABLET FIX: Expand to full width to prevent truncation */
+  .s15-overlay, .s15-rail {
     max-width: 100% !important;
     width: 100% !important;
+    left: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
     background: transparent !important;
-    margin: 0 auto !important;
-    position: relative !important;
   }
 
-  .s1-text, .s2-text, .s4-text, .s5-text, .s9-text, .s11-text, .s13-text, .s14-text {
-    padding: 0 20px !important; margin: 80px auto !important; text-align: left !important;
-  }
-
-  /* S15 Tablet Centering Fix */
   .s15-text {
     text-align: center !important;
     color: #fff !important;
-    width: 100% !important;
-    max-width: 800px !important; /* Prevents text lines from getting too long on wide tablets */
+    /* Ensure the text has room to breathe on tablet without clipping */
+    width: 90% !important;
+    max-width: 800px !important;
     margin: 80px auto !important;
     position: relative !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
-
-  .s1-frame, .s2-frame, .s4-frame, .s5-frame, .s9-frame, .s11-frame, .s13-frame, .s14-frame {
-    position: absolute !important; left: 50% !important; transform: translateX(-50%) !important;
-    width: 600px !important; margin: 0 auto !important; top: 0 !important; bottom: 0 !important; padding: 20px !important;
-  }
 }
+
 
 
 </style>
